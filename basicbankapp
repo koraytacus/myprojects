@@ -1,0 +1,32 @@
+class BankAccount():
+    def __init__(self,own,balance = 0.0):
+        self.own = own
+        self.balance = 0.0
+
+    def choice(self):
+        print(f"Hello,and welcome Mr or Mss {self.own}")
+        while True:
+            print("1)Deposit money -2)Withdraw money -3)Remaining Money - 4)Exit  ") 
+            answer = int(input("Which operation do you want to use : "))
+            if answer == 1 :
+                self.deposit()
+            elif answer == 2 : 
+                self.withdraw()
+            elif answer == 3 :
+                if self.balance > 0 :
+                    print(f"your money in this account is {self.balance} $ ")
+                else:
+                    print(f"your have a debt to the bank about {self.balance} $  ")
+
+            elif answer == 4:
+                break
+
+    def deposit(self):
+        amountofmoney = float(input("Please enter amount of money that you want to deposit:"))
+        self.balance += amountofmoney 
+    def withdraw(self):
+        amountofmoney = float(input("Please enter amount of money that you want to withdraw:"))
+        self.balance-=amountofmoney
+    
+account1 = BankAccount("Koray Ürün")
+account1.choice()
