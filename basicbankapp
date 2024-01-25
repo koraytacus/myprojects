@@ -1,7 +1,7 @@
 class BankAccount():
-    def __init__(self,own,balance):
+    def __init__(self,own,balance=0):
         self.own = own
-        self.balance = 0.0
+        self.balance = balance
 
     def choice(self):
         print(f"Hello,and welcome Mr or Mss {self.own}")
@@ -22,11 +22,11 @@ class BankAccount():
                 break
 
     def deposit(self):
-        amountofmoney = float(input("Please enter amount of money that you want to deposit:"))
-        self.balance += amountofmoney 
+        amount_of_money = float(input("Please enter amount of money that you want to deposit:"))
+        self.balance += amount_of_money 
     def withdraw(self):
-        amountofmoney = float(input("Please enter amount of money that you want to withdraw:"))
-        self.balance-=amountofmoney
+        amount_of_money = float(input("Please enter amount of money that you want to withdraw:"))
+        self.balance-=amount_of_money
     
 account1 = BankAccount("Koray Ürün")
 account1.choice()
